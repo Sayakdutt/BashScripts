@@ -1,4 +1,4 @@
-#! /bin/bash
+#!/bin/bash
 clear
 sum=0
 i="y"
@@ -12,6 +12,7 @@ while [ $i = "y" ]; do
 	echo "2.Subtraction"
 	echo "3.Multiplication"
 	echo "4.Division"
+	echo "5.Modulus"
 	echo -n "Enter your choice: "
 	read ch
 	case $ch in
@@ -29,10 +30,14 @@ while [ $i = "y" ]; do
 		;;
 	4)
 		echo -n "Result = "
-		 echo "scale=2; $n1 / $n2" | bc 
+		echo "scale=2; $n1 / $n2" | bc 
 		;;	
+	5)	echo -n "Result = "
+		echo  "$((n1%n2))"
+		;;
 	*)
-       		echo "Invalid choice" ;;
+       		echo "Invalid choice"
+	       	;;
 	esac
 	echo "Do u want to continue (y/n)) ?"
 	read i
